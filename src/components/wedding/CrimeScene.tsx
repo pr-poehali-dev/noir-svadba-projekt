@@ -69,7 +69,7 @@ const CrimeScene = () => {
 
             <div className="w-full h-64 sm:h-80 rounded-sm overflow-hidden border-2 border-noir-ink/20 relative">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=36.5873%2C50.5955&z=16&pt=36.5873%2C50.5955%2Cpm2rdm&lang=ru_RU"
+                src="https://yandex.ru/map-widget/v1/?ll=36.58777%2C50.59577&z=17&pt=36.58777%2C50.59577%2Cpm2rdm&lang=ru_RU"
                 width="100%"
                 height="100%"
                 frameBorder="0"

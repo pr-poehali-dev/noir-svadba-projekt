@@ -80,7 +80,7 @@ const SuspectFiles = () => {
           <SuspectCard
             role="Фигурант №2 — Подозреваемая"
             name="Ксения"
-            alias="«Сладкая Мстительница»"
+            alias="Подозреваемая"
             description="Подозревается в систематическом хищении сердец. Особые приметы: обезоруживающая улыбка, опасный взгляд."
             imgUrl="https://cdn.poehali.dev/projects/943c2551-bcf0-4558-a6af-32f391ae79fb/bucket/933dc7f6-f00f-4245-9d64-503aaab86242.jpg"
             isDetective={false}
