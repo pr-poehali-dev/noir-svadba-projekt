@@ -6,7 +6,6 @@ interface FormData {
   phone: string;
   persons: string;
   attendance: string;
-  menu: string;
   wishes: string;
   signature: string;
 }
@@ -17,7 +16,6 @@ const InterrogationForm = () => {
     phone: '',
     persons: '1',
     attendance: '',
-    menu: '',
     wishes: '',
     signature: '',
   });
@@ -29,7 +27,6 @@ const InterrogationForm = () => {
     if (!formData.fullName.trim()) newErrors.fullName = 'Обязательное поле';
     if (!formData.phone.trim()) newErrors.phone = 'Обязательное поле';
     if (!formData.attendance) newErrors.attendance = 'Выберите вариант';
-    if (!formData.menu) newErrors.menu = 'Выберите меню';
     if (!formData.signature.trim()) newErrors.signature = 'Подпись обязательна';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -56,7 +53,7 @@ const InterrogationForm = () => {
         <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
           <div className="aged-paper rounded-sm p-8 sm:p-12">
             <div className="seal mx-auto mb-6">
-              <span>Принято<br />к делу<br />15.08.26</span>
+              <span>Принято<br />к делу<br />13.06.26</span>
             </div>
             <h3 className="font-heading text-2xl sm:text-3xl font-bold text-noir-ink mb-4">
               ПОКАЗАНИЯ ПРИНЯТЫ
@@ -72,11 +69,12 @@ const InterrogationForm = () => {
                   Памятка свидетелю:
                 </p>
                 <ul className="space-y-2 font-mono text-noir-ink/70 text-xs">
-                  <li>1. Явиться 15 августа 2026 к 17:00</li>
-                  <li>2. Соблюдать дресс-код (нуар-стиль)</li>
-                  <li>3. Детей оставить под домашним арестом</li>
-                  <li>4. При себе иметь хорошее настроение</li>
-                  <li>5. Подарки = вещественные доказательства</li>
+                  <li>1. Явиться 13 июня 2026 к 10:15</li>
+                  <li>2. Быть нарядно одетым(ой)</li>
+                  <li>3. Женщинам — не в белом!</li>
+                  <li>4. Детей оставить под домашним арестом</li>
+                  <li>5. При себе иметь хорошее настроение</li>
+                  <li>6. Подарки = вещественные доказательства</li>
                 </ul>
               </div>
             )}
@@ -99,7 +97,7 @@ const InterrogationForm = () => {
       <div className="relative z-10 max-w-2xl mx-auto px-4">
         <div className="text-center mb-12">
           <p className="font-typewriter text-noir-red-bright text-xs tracking-[5px] uppercase mb-3">
-            Раздел VII
+            Раздел VI
           </p>
           <h2 className="font-heading text-2xl sm:text-3xl font-bold text-noir-text mb-2">
             ПРОТОКОЛ ДОПРОСА
@@ -113,7 +111,7 @@ const InterrogationForm = () => {
         <form onSubmit={handleSubmit} className="border border-noir-text-dim/15 rounded-sm p-6 sm:p-10 bg-noir-navy/30">
           <p className="font-typewriter text-noir-text/60 text-xs leading-relaxed mb-8 border-b border-noir-text-dim/10 pb-6">
             Я, нижеподписавшийся, добровольно даю согласие на участие в следственных действиях,
-            назначенных на 15 августа 2026 года, и обязуюсь прибыть в указанное место.
+            назначенных на 13 июня 2026 года, и обязуюсь прибыть в указанное место.
           </p>
 
           <div className="space-y-6">
@@ -206,49 +204,6 @@ const InterrogationForm = () => {
                 ))}
               </div>
               {errors.attendance && <p className="text-noir-red-bright text-xs mt-1 font-typewriter">{errors.attendance}</p>}
-            </div>
-
-            <div>
-              <label className="font-typewriter text-noir-text-dim text-xs tracking-wider uppercase block mb-3">
-                Выбор меню *
-              </label>
-              <div className="space-y-3">
-                {[
-                  { value: 'meat', label: 'Мясо (тяжкие телесные повреждения)', icon: 'Drumstick' },
-                  { value: 'fish', label: 'Рыба (глубоководный допрос)', icon: 'Fish' },
-                  { value: 'surprise', label: 'Алиби (сюрприз)', icon: 'HelpCircle' },
-                ].map(option => (
-                  <label
-                    key={option.value}
-                    className={`flex items-center gap-3 p-3 rounded-sm border cursor-pointer transition-all ${
-                      formData.menu === option.value
-                        ? 'border-noir-red-bright bg-noir-red/10'
-                        : 'border-noir-text-dim/15 hover:border-noir-text-dim/30'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="menu"
-                      value={option.value}
-                      checked={formData.menu === option.value}
-                      onChange={(e) => handleChange('menu', e.target.value)}
-                      className="sr-only"
-                    />
-                    <Icon
-                      name={option.icon}
-                      size={18}
-                      fallback="CircleAlert"
-                      className={formData.menu === option.value ? 'text-noir-red-bright' : 'text-noir-text-dim/40'}
-                    />
-                    <span className={`font-typewriter text-sm ${
-                      formData.menu === option.value ? 'text-noir-text' : 'text-noir-text-dim'
-                    }`}>
-                      {option.label}
-                    </span>
-                  </label>
-                ))}
-              </div>
-              {errors.menu && <p className="text-noir-red-bright text-xs mt-1 font-typewriter">{errors.menu}</p>}
             </div>
 
             <div>

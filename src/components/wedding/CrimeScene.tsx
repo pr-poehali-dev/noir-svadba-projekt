@@ -40,10 +40,10 @@ const CrimeScene = () => {
                   Дата и время происшествия
                 </p>
                 <p className="font-heading text-2xl sm:text-3xl font-bold text-noir-ink">
-                  15 августа 2026 года
+                  13 июня 2026 года
                 </p>
                 <p className="font-typewriter text-noir-ink/70 text-sm mt-1">
-                  Начало оперативных действий: 17:00
+                  Начало оперативных действий: 10:30
                 </p>
               </div>
             </div>
@@ -59,10 +59,10 @@ const CrimeScene = () => {
                   Место происшествия
                 </p>
                 <p className="font-heading text-xl sm:text-2xl font-bold text-noir-ink">
-                  Ресторан «Алиби»
+                  Управление ЗАГС
                 </p>
                 <p className="font-typewriter text-noir-ink/70 text-sm mt-1">
-                  г. Москва, ул. Тайная, д. 7
+                  г. Белгород, ул. Попова, д. 14
                 </p>
               </div>
             </div>
@@ -96,7 +96,7 @@ const CrimeScene = () => {
           </div>
 
           <div className="absolute bottom-6 right-6 seal hidden sm:flex">
-            <span>Место<br />осмотрено<br />15.08.26</span>
+            <span>Место<br />осмотрено<br />13.06.26</span>
           </div>
         </div>
       </div>

@@ -2,34 +2,22 @@ import Icon from '@/components/ui/icon';
 
 const events = [
   {
-    time: '17:00',
+    time: '10:15',
     title: 'Сбор понятых',
     description: 'Фуршет и предварительные показания',
     icon: 'Wine',
   },
   {
-    time: '18:00',
+    time: '10:30',
     title: 'Оглашение приговора',
     description: 'Торжественная церемония бракосочетания',
     icon: 'Heart',
   },
   {
-    time: '19:00',
+    time: '13:00',
     title: 'Осмотр вещдоков',
     description: 'Банкет — изучение кулинарных улик',
     icon: 'UtensilsCrossed',
-  },
-  {
-    time: '21:00',
-    title: 'Дача показаний под танцы',
-    description: 'Дискотека и следственные эксперименты',
-    icon: 'Music',
-  },
-  {
-    time: '23:00',
-    title: 'Опознание всех всех',
-    description: 'Торт и финальный осмотр',
-    icon: 'Cake',
   },
 ];
 

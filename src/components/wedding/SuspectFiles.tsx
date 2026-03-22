@@ -5,14 +5,14 @@ const SuspectCard = ({
   name,
   alias,
   description,
-  imgPlaceholder,
+  imgUrl,
   isDetective,
 }: {
   role: string;
   name: string;
   alias: string;
   description: string;
-  imgPlaceholder: string;
+  imgUrl: string;
   isDetective: boolean;
 }) => (
   <div className="relative group">
@@ -26,22 +26,13 @@ const SuspectCard = ({
       </div>
 
       <div className="relative w-48 h-60 sm:w-56 sm:h-72 mx-auto mb-6 overflow-hidden border-4 border-noir-ink/20">
-        <div className="absolute inset-0 bg-noir-ink/20 flex items-center justify-center">
-          <div className="text-center p-4">
-            <Icon
-              name={isDetective ? 'UserRound' : 'User'}
-              size={64}
-              className="mx-auto mb-3 text-noir-ink/30"
-            />
-            <p className="font-typewriter text-noir-ink/40 text-xs">{imgPlaceholder}</p>
-          </div>
-        </div>
+        <img
+          src={imgUrl}
+          alt={name}
+          className="absolute inset-0 w-full h-full object-cover object-top"
+          style={{ filter: isDetective ? 'grayscale(80%) contrast(1.1)' : 'grayscale(30%) contrast(1.05)' }}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-noir-ink/30" />
-        {!isDetective && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white px-4 py-1 border border-noir-ink/40">
-            <span className="font-typewriter text-noir-ink text-sm tracking-wider">ПОЙМАНА</span>
-          </div>
-        )}
       </div>
 
       <div className="text-center">
@@ -80,18 +71,18 @@ const SuspectFiles = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           <SuspectCard
             role="Фигурант №1 — Потерпевший"
-            name="Детектив Иванов"
+            name="Детектив Машляк"
             alias="Ведущий оперативник"
             description="Опытный следователь, раскрывший не одно дело. Однако оказался бессилен перед главной уликой — улыбкой подозреваемой."
-            imgPlaceholder="Фото жениха"
+            imgUrl="https://cdn.poehali.dev/projects/943c2551-bcf0-4558-a6af-32f391ae79fb/bucket/fc144397-548c-4fe9-8d83-2c600bc2b4fd.jpg"
             isDetective={true}
           />
           <SuspectCard
             role="Фигурант №2 — Подозреваемая"
-            name="Мария"
+            name="Ксения"
             alias="«Сладкая Мстительница»"
             description="Подозревается в систематическом хищении сердец. Особые приметы: обезоруживающая улыбка, опасный взгляд."
-            imgPlaceholder="Фото невесты"
+            imgUrl="https://cdn.poehali.dev/projects/943c2551-bcf0-4558-a6af-32f391ae79fb/bucket/933dc7f6-f00f-4245-9d64-503aaab86242.jpg"
             isDetective={false}
           />
         </div>

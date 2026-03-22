@@ -41,16 +41,16 @@ const CaseFileCover = () => {
             ДЕЛО №
           </h1>
           <div className="font-heading text-3xl sm:text-5xl md:text-6xl font-bold text-noir-red-bright mt-2">
-            15.08.2026
+            13.06.2026
           </div>
         </div>
 
         <div className="mt-8 mb-12">
           <p className="font-typewriter text-noir-text/80 text-sm sm:text-lg leading-relaxed max-w-xl mx-auto">
             По факту хищения сердца детектива{' '}
-            <span className="text-noir-gold font-bold">Иванова</span>{' '}
+            <span className="text-noir-gold font-bold">Машляка</span>{' '}
             гражданкой{' '}
-            <span className="text-noir-red-bright font-bold">Марией</span>
+            <span className="text-noir-red-bright font-bold">Ксенией</span>
           </p>
         </div>
 
@@ -59,7 +59,7 @@ const CaseFileCover = () => {
           <span className="w-1 h-1 bg-noir-red rounded-full" />
           <span>ЛИСТ 1</span>
           <span className="w-1 h-1 bg-noir-red rounded-full" />
-          <span>НАЧАТО: 15.08.2026</span>
+          <span>НАЧАТО: 13.06.2026</span>
         </div>
 
         <button

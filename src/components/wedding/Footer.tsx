@@ -20,22 +20,22 @@ const Footer = () => {
           <div className="border border-noir-text-dim/15 rounded-sm p-6 bg-noir-dark/30 text-center">
             <Icon name="Phone" size={20} className="mx-auto mb-3 text-noir-red-bright/60" />
             <p className="font-typewriter text-noir-text-dim text-[10px] tracking-[3px] uppercase mb-2">
-              Следователь (невеста)
+              Задержанная (невеста)
             </p>
-            <p className="font-heading text-lg text-noir-text font-bold mb-1">Мария</p>
-            <a href="tel:+79001234567" className="font-mono text-noir-gold/70 text-sm hover:text-noir-gold transition-colors">
-              +7 (900) 123-45-67
+            <p className="font-heading text-lg text-noir-text font-bold mb-1">Ксения</p>
+            <a href="tel:+79066035670" className="font-mono text-noir-gold/70 text-sm hover:text-noir-gold transition-colors">
+              8-906-603-56-70
             </a>
           </div>
 
           <div className="border border-noir-text-dim/15 rounded-sm p-6 bg-noir-dark/30 text-center">
             <Icon name="Phone" size={20} className="mx-auto mb-3 text-noir-red-bright/60" />
             <p className="font-typewriter text-noir-text-dim text-[10px] tracking-[3px] uppercase mb-2">
-              Понятой (организатор)
+              Следователь (жених)
             </p>
-            <p className="font-heading text-lg text-noir-text font-bold mb-1">Анна</p>
-            <a href="tel:+79009876543" className="font-mono text-noir-gold/70 text-sm hover:text-noir-gold transition-colors">
-              +7 (900) 987-65-43
+            <p className="font-heading text-lg text-noir-text font-bold mb-1">Владимир</p>
+            <a href="tel:+79507120184" className="font-mono text-noir-gold/70 text-sm hover:text-noir-gold transition-colors">
+              8-950-712-01-84
             </a>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Footer = () => {
               'Хорошее настроение — обязательно',
               'Пустой желудок — рекомендуется',
               'Детей оставить под домашним арестом',
-              'Дресс-код: нуар-стиль',
+              'Быть нарядно одетым(ой), женщинам — не в белом',
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <Icon name="CheckSquare" size={14} className="text-noir-gold/50 mt-0.5 flex-shrink-0" />
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           <p className="font-typewriter text-noir-text-dim/40 text-xs">
-            © 2026 | Дело № 15.08.2026
+            © 2026 | Дело № 13.06.2026
           </p>
           <p className="font-typewriter text-noir-text-dim/30 text-[10px]">
             Лицензия: Брак выдан. Срок действия — пожизненно.
