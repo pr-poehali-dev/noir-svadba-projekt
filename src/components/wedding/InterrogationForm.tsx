@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+import funcUrls from '../../../backend/func2url.json';
 
 interface FormData {
   fullName: string;
@@ -20,6 +21,8 @@ const InterrogationForm = () => {
     signature: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const validate = () => {
@@ -32,10 +35,36 @@ const InterrogationForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
+    if (!validate()) return;
+
+    setSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch(funcUrls.rsvp, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          phone: formData.phone,
+          persons: parseInt(formData.persons),
+          attendance: formData.attendance,
+          wishes: formData.wishes,
+          signature: formData.signature,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Ошибка сервера');
+      }
+
       setSubmitted(true);
+    } catch {
+      setSubmitError('Не удалось отправить показания. Попробуйте ещё раз.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -237,9 +266,20 @@ const InterrogationForm = () => {
               </p>
             </div>
 
+            {submitError && (
+              <div className="border border-noir-red-bright/30 bg-noir-red/10 rounded-sm p-3 text-center">
+                <p className="font-typewriter text-noir-red-bright text-xs">{submitError}</p>
+              </div>
+            )}
+
             <div className="text-center pt-4">
-              <button type="submit" className="stamp-button">
-                Заверить подписью и печатью
+              <button
+                type="submit"
+                className="stamp-button"
+                disabled={submitting}
+                style={{ opacity: submitting ? 0.6 : 1 }}
+              >
+                {submitting ? 'Отправка...' : 'Заверить подписью и печатью'}
               </button>
             </div>
           </div>

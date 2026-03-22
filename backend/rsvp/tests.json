@@ -1,0 +1,50 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "POST save RSVP",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "fullName": "Тест Тестов",
+        "phone": "+79001234567",
+        "persons": 2,
+        "attendance": "yes",
+        "wishes": "Счастья!",
+        "signature": "Тестов"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "GET responses list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "POST missing fields",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "fullName": "",
+        "phone": "",
+        "attendance": "",
+        "signature": ""
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
