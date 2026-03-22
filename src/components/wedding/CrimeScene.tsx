@@ -67,18 +67,16 @@ const CrimeScene = () => {
               </div>
             </div>
 
-            <div className="w-full h-64 rounded-sm overflow-hidden border-2 border-noir-ink/20 relative bg-noir-ink/10">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <Icon name="Map" size={48} className="mx-auto mb-3 text-noir-ink/20" />
-                  <p className="font-typewriter text-noir-ink/40 text-xs">
-                    КАРТА МЕСТА ПРОИСШЕСТВИЯ
-                  </p>
-                  <p className="font-typewriter text-noir-ink/30 text-[10px] mt-1">
-                    Вставьте iframe Яндекс.Карт
-                  </p>
-                </div>
-              </div>
+            <div className="w-full h-64 sm:h-80 rounded-sm overflow-hidden border-2 border-noir-ink/20 relative">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=36.5873%2C50.5955&z=16&pt=36.5873%2C50.5955%2Cpm2rdm&lang=ru_RU"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allowFullScreen
+                style={{ position: 'absolute', inset: 0 }}
+                title="Карта места происшествия"
+              />
             </div>
 
             <div className="border-t-2 border-dashed border-noir-ink/15 pt-6 mt-6">

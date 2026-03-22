@@ -48,7 +48,7 @@ const CaseFileCover = () => {
         <div className="mt-8 mb-12">
           <p className="font-typewriter text-noir-text/80 text-sm sm:text-lg leading-relaxed max-w-xl mx-auto">
             По факту хищения сердца детектива{' '}
-            <span className="text-noir-gold font-bold">Машляка</span>{' '}
+            <span className="text-noir-gold font-bold">Машляк</span>{' '}
             гражданкой{' '}
             <span className="text-noir-red-bright font-bold">Ксенией</span>
           </p>
