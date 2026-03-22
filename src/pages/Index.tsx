@@ -1,12 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useCallback } from 'react';
+import LoadingScreen from '@/components/wedding/LoadingScreen';
+import CaseFileCover from '@/components/wedding/CaseFileCover';
+import SuspectFiles from '@/components/wedding/SuspectFiles';
+import CrimeScene from '@/components/wedding/CrimeScene';
+import Timeline from '@/components/wedding/Timeline';
+import DressCode from '@/components/wedding/DressCode';
+import AdultsOnly from '@/components/wedding/AdultsOnly';
+import InterrogationForm from '@/components/wedding/InterrogationForm';
+import Footer from '@/components/wedding/Footer';
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
+
+  const handleLoadingComplete = useCallback(() => {
+    setLoading(false);
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="film-grain">
+      <CaseFileCover />
+      <hr className="case-divider" />
+      <SuspectFiles />
+      <hr className="case-divider" />
+      <CrimeScene />
+      <hr className="case-divider" />
+      <Timeline />
+      <hr className="case-divider" />
+      <DressCode />
+      <hr className="case-divider" />
+      <AdultsOnly />
+      <hr className="case-divider" />
+      <InterrogationForm />
+      <Footer />
     </div>
   );
 };
